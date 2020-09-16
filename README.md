@@ -20,7 +20,7 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 
 ```
 sudo add-apt-repository ppa:regolith-linux/unstable -y
-sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet gnome-polkit -y
+sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance light flameshot nautilus xfce4-power-manager pnmixer network-manager-applet gnome-polkit -y
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
