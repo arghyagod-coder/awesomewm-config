@@ -21,6 +21,7 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 ```
 sudo add-apt-repository ppa:regolith-linux/unstable -y
 sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance light flameshot nautilus xfce4-power-manager pnmixer network-manager-applet gnome-polkit -y
+
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
 
@@ -29,8 +30,9 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #### Arch-Based
 
 ```
-yay -S picom-ibhagwan-git (picom has transparency)
-yay -S awesome rofi  i3lock-fancy xclip ttf-roboto gnome-polkit materia-gtk-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager -y
+yay -S plata-theme (instead of materia-gtk-theme)
+yay -S picom-ibhagwan-git (picom has transparency issue)
+yay -S awesome rofi  i3lock-fancy xclip ttf-roboto gnome-polkit  lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager -y
 yay -S qogir-icon-theme-git ( for icon theme)
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
