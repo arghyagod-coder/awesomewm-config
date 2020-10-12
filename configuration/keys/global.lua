@@ -263,7 +263,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.spawn('sudo light -A 10')
+      awful.util.spawn_with_shell('sudo light -A 10')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
@@ -271,7 +271,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessDown',
     function()
-      awful.spawn('sudo light -U 10')
+      awful.util.spawn_with_shell('sudo light -U 10')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),
