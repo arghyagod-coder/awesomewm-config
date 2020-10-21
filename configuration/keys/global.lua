@@ -13,7 +13,6 @@ local globalKeys =
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
   -- Tag browsing
   awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
@@ -36,7 +35,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'r',
+    'd',
     function()
       _G.screen.primary.left_panel:toggle(true)
     end,
@@ -263,7 +262,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.util.spawn_with_shell('sudo light -A 10')
+      awful.spawn('light -A 10')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
@@ -271,7 +270,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessDown',
     function()
-      awful.util.spawn_with_shell('sudo light -U 10')
+      awful.spawn('light -U 10')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),
@@ -371,14 +370,35 @@ local globalKeys =
       awful.util.spawn_with_shell('mate-system-monitor')
     end
   ),
-  -- Kill VLC
-  awful.key(
+  -- Kill system
+awful.key(
+    {modkey},
+    's',
+    function()
+      awful.util.spawn('poweroff')
+    end,
+    {description = 'poweroff', group = 'system'}
+  ),
+awful.key(
+    {modkey},
+    'r',
+    function()
+      awful.util.spawn('reboot')
+    end,
+    {description = 'reboot', group = 'system'}
+  ),
+
+awful.key(
     {modkey},
     'v',
     function()
-      awful.util.spawn_with_shell('killall -9 vlc')
-    end
+      awful.util.spawn('virtualbox')
+    end,
+    {description = 'vm', group = 'system'}
   ),
+
+
+
   -- File Manager
   awful.key(
     {modkey},
@@ -398,6 +418,7 @@ local globalKeys =
     {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
   )
 )
+
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
@@ -454,6 +475,8 @@ for i = 1, 9 do
       end,
       descr_move
     ),
+
+
     -- Toggle tag on focused client.
     awful.key(
       {modkey, 'Control', 'Shift'},
@@ -472,3 +495,4 @@ for i = 1, 9 do
 end
 
 return globalKeys
+
