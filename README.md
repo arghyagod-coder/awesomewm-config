@@ -38,8 +38,10 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #### Arch-Based
 
 ```
+yay -S awesome rofi  i3lock-fancy xclip ttf-roboto polkit-gnome  picom-git  lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager mate-system-monitor
+plata-theme  qogir-icon-theme-git -y
+
 yay -S plata-theme  qogir-icon-theme-git ( for icon theme)  (instead of materia-gtk-theme)
-yay -S awesome rofi  i3lock-fancy xclip ttf-roboto polkit-gnome  picom-git  lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager -y
 yay -s materia-gtk-theme
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 ```
